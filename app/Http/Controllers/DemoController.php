@@ -35,8 +35,14 @@ class DemoController extends Controller {
         return "Hello4";
     }
 
+    // Manipulate request headers
     function ManiRequest( Request $request ): array {
         return $request->header();
     }
-    
+
+    //Rate Limit
+    function RateLimit( Request $request ): string {
+        return "Hello";
+    }
+
 }

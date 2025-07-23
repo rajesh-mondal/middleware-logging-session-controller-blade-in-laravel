@@ -30,3 +30,5 @@ Route::middleware( ['demo'] )->group( function () {
 } );
 
 Route::get( "hello-req", [DemoController::class, 'ManiRequest'] )->middleware( [DemoMiddleware::class] );
+
+Route::get( "rate-limit", [DemoController::class, 'RateLimit'] )->middleware( 'throttle:5,1' );
