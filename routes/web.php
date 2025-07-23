@@ -20,3 +20,11 @@ Route::get( "hello", [DemoController::class, 'RequestVerification'] )->middlewar
 // Request Redirect
 Route::get( "hello1/{key}", [DemoController::class, 'Redirect1'] )->middleware( [DemoMiddleware::class] );
 Route::get( "hello2", [DemoController::class, 'Redirect2'] );
+
+// Route Group
+Route::middleware( ['demo'] )->group( function () {
+    Route::get( "hello1/{key}", [DemoController::class, 'Route1'] );
+    Route::get( "hello2/{key}", [DemoController::class, 'Route2'] );
+    Route::get( "hello3/{key}", [DemoController::class, 'Route3'] );
+    Route::get( "hello4/{key}", [DemoController::class, 'Route4'] );
+} );
