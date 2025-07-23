@@ -16,3 +16,7 @@ Route::get( '/SessionFlush', [SessionController::class, 'SessionFlush'] );
 
 // Request Verification
 Route::get( "hello", [DemoController::class, 'RequestVerification'] )->middleware( [DemoMiddleware::class] );
+
+// Request Redirect
+Route::get( "hello1/{key}", [DemoController::class, 'Redirect1'] )->middleware( [DemoMiddleware::class] );
+Route::get( "hello2", [DemoController::class, 'Redirect2'] );
