@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
+
 class DemoController extends Controller {
     // Request Verfication
     function RequestVerification(): string {
@@ -32,4 +34,9 @@ class DemoController extends Controller {
     function Route4(): string {
         return "Hello4";
     }
+
+    function ManiRequest( Request $request ): array {
+        return $request->header();
+    }
+    
 }

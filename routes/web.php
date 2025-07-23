@@ -28,3 +28,5 @@ Route::middleware( ['demo'] )->group( function () {
     Route::get( "hello3/{key}", [DemoController::class, 'Route3'] );
     Route::get( "hello4/{key}", [DemoController::class, 'Route4'] );
 } );
+
+Route::get( "hello-req", [DemoController::class, 'ManiRequest'] )->middleware( [DemoMiddleware::class] );
