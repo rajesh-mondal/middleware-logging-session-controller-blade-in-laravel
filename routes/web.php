@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DemoController;
 use App\Http\Controllers\LogController;
+use App\Http\Controllers\ResourceController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\SingleActionController;
 use App\Http\Middleware\DemoMiddleware;
@@ -35,3 +36,6 @@ Route::get( "hello-req", [DemoController::class, 'ManiRequest'] )->middleware( [
 Route::get( "rate-limit", [DemoController::class, 'RateLimit'] )->middleware( 'throttle:5,1' );
 
 Route::get( "/single", SingleActionController::class );
+
+// for resource controller
+Route::resource( "resource", ResourceController::class );
