@@ -3,6 +3,7 @@
 use App\Http\Controllers\DemoController;
 use App\Http\Controllers\LogController;
 use App\Http\Controllers\SessionController;
+use App\Http\Controllers\SingleActionController;
 use App\Http\Middleware\DemoMiddleware;
 use Illuminate\Support\Facades\Route;
 
@@ -32,3 +33,5 @@ Route::middleware( ['demo'] )->group( function () {
 Route::get( "hello-req", [DemoController::class, 'ManiRequest'] )->middleware( [DemoMiddleware::class] );
 
 Route::get( "rate-limit", [DemoController::class, 'RateLimit'] )->middleware( 'throttle:5,1' );
+
+Route::get( "/single", SingleActionController::class );
