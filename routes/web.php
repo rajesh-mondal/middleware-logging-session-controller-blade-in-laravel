@@ -1,12 +1,13 @@
 <?php
 
-use App\Http\Controllers\DemoController;
-use App\Http\Controllers\LogController;
-use App\Http\Controllers\ResourceController;
-use App\Http\Controllers\SessionController;
-use App\Http\Controllers\SingleActionController;
-use App\Http\Middleware\DemoMiddleware;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LogController;
+use App\Http\Middleware\DemoMiddleware;
+use App\Http\Controllers\DemoController;
+use App\Http\Controllers\ConstController;
+use App\Http\Controllers\SessionController;
+use App\Http\Controllers\ResourceController;
+use App\Http\Controllers\SingleActionController;
 
 Route::get( '/log/{num1}/{num2}', [LogController::class, 'LogAction'] );
 
@@ -39,3 +40,5 @@ Route::get( "/single", SingleActionController::class );
 
 // for resource controller
 Route::resource( "resource", ResourceController::class );
+
+Route::get( "hello-const", [ConstController::class, 'ManiRequest'] );
